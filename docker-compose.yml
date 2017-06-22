@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    working_dir: "/var/docker-training/api/"
+    command: npm start
+    volumes:
+      - .:/code
+    ports:
+      - "3000:3000"
+  web:
+    build: .
+    working_dir: "/var/docker-training/web/"
+    command: npm start
+    volumes:
+      - .:/code
+    ports:
+      - "3001:3001"
